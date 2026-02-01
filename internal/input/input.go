@@ -4,11 +4,10 @@ import (
 	"bufio"
 	"fmt"
 	"strings"
-	"github.com/Enyinnaya-x/GO-Calculator/internal/operations/operations"
+	"github.com/Enyinnaya-x/GO-Calculator/internal/operations"
 )
 
-
-//get user input
+// get user input
 func GetUserInput(prompt string, r *bufio.Reader) {
 	fmt.Print(prompt)
 
@@ -26,13 +25,14 @@ func GetUserInput(prompt string, r *bufio.Reader) {
 
 	switch input {
 	case "A":
-		ArithmeticOperation("+")
+		operations.ArithmeticOperation("+")
 	case "B":
-		fmt.Println("You picked B")
+		operations.ArithmeticOperation("-")
 	case "C":
-		fmt.Println("You picked C")
+		operations.ArithmeticOperation("*")
 	case "D":
 		fmt.Println("You picked D")
+		operations.ArithmeticOperation("/")
 	default:
 		fmt.Println("I don't know what that is, sorry...")
 		GetUserInput(prompt, r)
