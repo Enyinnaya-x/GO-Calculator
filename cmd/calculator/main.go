@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"time"
-	"github.com/Enyinnaya-x/GO-Calculator/input"
+	"github.com/Enyinnaya-x/GO-Calculator/internal/input"
 )
 
 func main() {
@@ -23,5 +23,5 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	//get user input
-	input.GetUserInput("A - Addition, B - Subtraction, C - Multiplication, D - Division", reader)
+	input.GetUserInput("A - Addition, B - Subtraction, C - Multiplication, D - Division : ", reader)
 }

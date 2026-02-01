@@ -3,7 +3,10 @@ package input
 import (
 	"bufio"
 	"fmt"
+	"strings"
+	"github.com/Enyinnaya-x/GO-Calculator/internal/operations/operations"
 )
+
 
 //get user input
 func GetUserInput(prompt string, r *bufio.Reader) {
@@ -15,9 +18,15 @@ func GetUserInput(prompt string, r *bufio.Reader) {
 		panic(err)
 	}
 
+	//set user selection to uppercase
+	input = strings.ToUpper(input)
+
+	//trim white space from user input
+	input = strings.TrimSpace(input)
+
 	switch input {
 	case "A":
-		fmt.Println("You picked A")
+		ArithmeticOperation("+")
 	case "B":
 		fmt.Println("You picked B")
 	case "C":
